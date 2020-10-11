@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() 
+{
+	int n,coln;
+	float sump,proizneg,sum,col,flag;
+	flag=0;
+	proizneg=1;
+	sump=0;
+	int s[100];
+	scanf("%d",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&s[i]);
+	}
+	for(int i=0;i<n;i++)
+	{
+		printf("%d ",s[i]);
+		if(s[i]>0)
+		{
+			sump+=s[i];
+			sum+=s[i];
+			col++;
+		}
+		else
+		{
+			if(s[i]==0)
+			{
+				coln++;
+				col++;	
+			}
+			else
+			{
+				flag=1;
+				proizneg*=s[i];
+				sum+=s[i];
+				col++;
+			}
+		}
+	}
+	printf("\n");
+	printf("%f\n",sump);
+	if(flag=1)
+	{
+		printf("%f\n",proizneg);
+	}
+	else
+	{
+		printf("0\n");
+	}
+	printf("%d\n",coln);
+	printf("%f",sum/col);
+	return 0;
+}
